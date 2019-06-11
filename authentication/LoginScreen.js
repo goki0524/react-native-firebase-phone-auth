@@ -1,6 +1,7 @@
 import * as React from 'react'
-import {Text, View, ScrollView, TextInput, Button} from 'react-native'
-import {Linking, WebBrowser} from 'expo'
+import { Text, View, ScrollView, TextInput } from 'react-native'
+import { Container, Content, Header, Form, Input, Item, Button, Label } from 'native-base'
+import { Linking, WebBrowser } from 'expo'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
@@ -82,15 +83,21 @@ export default class App extends React.Component {
             return (
                 <ScrollView style={{padding: 20, marginTop: 20}}>
                     <TextInput
+                        style={{padding:50}}
                         value={this.state.phone}
                         onChangeText={this.onPhoneChange}
                         keyboardType="phone-pad"
                         placeholder="Your phone"
                     />
-                    <Button
+                    <Button style={{marginTop: 50}}
+                        full
+                        rounded
+                        success
                         onPress={this.onPhoneComplete}
                         title="Next"
-                    />
+                    >
+                        <Text style={{color: 'white'}}>ログイン</Text>
+                    </Button>
                 </ScrollView>
             )
         else
